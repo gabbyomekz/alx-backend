@@ -10,8 +10,11 @@ app = Flask(__name__)
 babel = Babel(app)
 
 
-# Config class for Flask app
 class Config:
+    """
+    Configuration class for Flask app,
+    Set Babel’s default locale ("en") and timezone ("UTC")
+    """
     # Available languages
     LANGUAGES = ["en", "fr"]
 
@@ -25,6 +28,10 @@ app.config.from_object(Config)
 
 @app.route('/')
 def index():
+    """
+    Route handler for the root URL.
+    Renders the index.html template.
+    """
     return render_template('1-index.html')
 
 
